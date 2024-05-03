@@ -24,7 +24,7 @@ function InputSearch({ value, setValue }) {
         <input
           type='text'
           placeholder='pesquisar...'
-          className=' w-1/3 px-2 py-1 text-sm'
+          className='  px-2 py-1 text-sm'
           value={value.search}
           onChange={({ target }) =>
             setValue((prev) => ({

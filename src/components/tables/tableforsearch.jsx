@@ -5,6 +5,7 @@ import React from 'react';
 function TableForSearch({ data, setData }) {
   const [table, setTable] = React.useState(false);
   const [item, setItem] = React.useState(false);
+
   async function handleClick(item) {
     const id = item.id;
     console.log(id);
@@ -212,7 +213,7 @@ function TableForSearch({ data, setData }) {
     return (
       <div className='overflow-x-auto relative shadow-md sm:rounded-lg mt-10'>
         <table className='w-full text-sm text-left text-gray-500 bg-white'>
-          <thead className='text-xs text-gray-700 bg-white border-b-[1px] '>
+          <thead className=' text-gray-200  bg-slate-950'>
             <tr>
               <th scope='col' className='px-2'>
                 nome
@@ -247,7 +248,7 @@ function TableForSearch({ data, setData }) {
             {data
               ? data.map((item) => (
                   <tr
-                    className='bg-white'
+                    className='bg-white cursor-pointer transition hover:bg-slate-300'
                     key={item.id}
                     onClick={() => handleClick(item)}
                   >
