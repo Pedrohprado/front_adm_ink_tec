@@ -1,15 +1,21 @@
 /* eslint-disable react/prop-types */
-import { Line, LineChart, Tooltip, XAxis } from 'recharts';
+import { AreaChart, Area, XAxis, Tooltip, LabelList } from 'recharts';
 
 function GraphInkByDays({ data }) {
   if (data)
     return (
       <div className=' flex items-center justify-center mt-5 w-full'>
-        <LineChart width={600} height={200} data={data}>
-          <XAxis dataKey='codigo' />
+        <AreaChart width={500} height={220} data={data}>
+          <XAxis dataKey='cabine' fontSize={'14px'} />
           <Tooltip />
-          <Line dataKey='quantidade' fill='#225DFE' />
-        </LineChart>
+          <Area dataKey='trabalhado' fill='#dba80169' stroke='#dba801'>
+            <LabelList
+              dataKey='trabalhado'
+              position={'top'}
+              fontSize={'11px'}
+            />
+          </Area>
+        </AreaChart>
       </div>
     );
 }

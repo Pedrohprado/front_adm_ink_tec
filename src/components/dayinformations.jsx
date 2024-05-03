@@ -8,8 +8,8 @@ const DayInformations = () => {
   React.useEffect(() => {
     async function fetchDatas() {
       try {
-        const url = import.meta.env.VITE_BASE_URL_GET_SOME_INKS;
-        const response = await fetch(url);
+        const url = import.meta.env.VITE_BASE_URL_GET_SOME_CABINS_BY_DAY;
+        const response = await fetch(`${url}null`);
         const data = await response.json();
         setData(data);
         console.log(data);
@@ -22,10 +22,10 @@ const DayInformations = () => {
 
   return (
     <div className=' w-1/2 flex flex-col p-4 border rounded shadow-md'>
-      <span className=' rounded flex w-52 items-center gap-2 px-5 py-1 bg-slate-200'>
+      <span className=' rounded flex w-64 items-center gap-2 px-5 py-1 bg-slate-200'>
         <VscGraphLine fill={'#1010108b'} />
         <p className=' text-slate-600 font-medium text-sm '>
-          tintas mais utilizadas
+          tempo trabalhado por cabine
         </p>
       </span>
       <GraphInkByDays data={data} />

@@ -1,7 +1,7 @@
 import React from 'react';
 import GraphInkMostUse from './graphics/graphinkmost';
 
-import { VscGraphLine } from 'react-icons/vsc';
+import { VscGraph } from 'react-icons/vsc';
 
 const InkMostUse = () => {
   const [data, setData] = React.useState(null);
@@ -24,7 +24,7 @@ const InkMostUse = () => {
   return (
     <div className=' w-1/2 flex flex-col p-4 border rounded shadow-md'>
       <span className=' rounded flex w-52 items-center gap-2 px-5 py-1 bg-slate-200'>
-        <VscGraphLine fill={'#1010108b'} />
+        <VscGraph fill={'#1010108b'} />
         <p className=' text-slate-600 font-medium text-sm '>
           tintas mais utilizadas
         </p>

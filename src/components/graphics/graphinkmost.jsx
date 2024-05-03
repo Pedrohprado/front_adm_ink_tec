@@ -5,7 +5,7 @@ const GraphInkMostUse = ({ data }) => {
   if (data)
     return (
       <div className=' flex items-center justify-center mt-5 w-full '>
-        <BarChart width={600} height={200} data={data}>
+        <BarChart width={600} height={220} data={data}>
           <XAxis dataKey='codigo' />
           <Tooltip />
           <Bar

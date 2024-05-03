@@ -26,12 +26,12 @@ const LastOperations = () => {
   }, []);
 
   return (
-    <div className=' h-[40%]  flex flex-col p-2 gap-2'>
+    <div className=' h-[40%]  flex flex-col p-1 gap-2 mt-4'>
       <div className='flex justify-between'>
         <h2 className='font-bold'>Ultimas operações</h2>
         <Link
-          to={'/dayinformations'}
-          className=' text-sky-600 font-medium text-sm'
+          to={'/search'}
+          className=' text-sky-600 font-medium text-sm hover:text-sky-300 transition hover:border-b-[1px] border-sky-300'
         >
           mais informações
         </Link>
