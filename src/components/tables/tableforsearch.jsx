@@ -1,14 +1,32 @@
 /* eslint-disable react/prop-types */
-
 import React from 'react';
+import { GlobalContext } from '../../global-context/globalcontext';
 
 function TableForSearch({ data, setData }) {
   const [table, setTable] = React.useState(false);
   const [item, setItem] = React.useState(false);
 
+  const { idMaster, setIdMaster } = React.useContext(GlobalContext);
+
+  React.useEffect(() => {
+    async function fetchData() {
+      try {
+        const url = import.meta.env.VITE_BASE_URL_ID;
+        const response = await fetch(`${url}${idMaster}`);
+        const data = await response.json();
+        setItem(data);
+        setTable(true);
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setIdMaster('');
+      }
+    }
+    if (idMaster) fetchData();
+  }, [idMaster, setIdMaster]);
+
   async function handleClick(item) {
     const id = item.id;
-    console.log(id);
 
     try {
       const url = import.meta.env.VITE_BASE_URL_ID;

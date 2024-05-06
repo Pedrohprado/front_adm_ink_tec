@@ -13,7 +13,7 @@ const LastOperations = () => {
         const data = await response.json();
 
         if (data.length > 10) {
-          const info = data.slice(-10);
+          const info = data.slice(-10).reverse();
           setData(info);
         } else {
           setData(data);

@@ -1,6 +1,19 @@
 /* eslint-disable react/prop-types */
+import { useNavigate } from 'react-router-dom';
+import { GlobalContext } from '../../global-context/globalcontext';
+import React from 'react';
+
 // eslint-disable-next-line react/prop-types
 const TableLastOp = ({ data }) => {
+  const navigate = useNavigate();
+  const { setIdMaster } = React.useContext(GlobalContext);
+
+  function handleClick(item) {
+    const idGet = item.id;
+    setIdMaster(idGet);
+    navigate('/search');
+  }
+
   if (data)
     return (
       <div className='overflow-x-auto relative shadow-md sm:rounded-lg'>
@@ -35,7 +48,11 @@ const TableLastOp = ({ data }) => {
           </thead>
           <tbody>
             {data.map((item) => (
-              <tr className='bg-white' key={item.id}>
+              <tr
+                className='bg-white hover:bg-slate-300'
+                key={item.id}
+                onClick={() => handleClick(item)}
+              >
                 <td className=' px-2 '>{item.name}</td>
                 <td className='py-3 px-6'>{item.card}</td>
                 <td className='py-3 px-6'>{item.cabin}</td>

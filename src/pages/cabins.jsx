@@ -18,7 +18,13 @@ function Cabins() {
         const url = import.meta.env.VITE_BASE_URL_GET_SOME_CABINS_BY_DAY;
         const response = await fetch(`${url}null`);
         const data = await response.json();
-        setFullData(data.result);
+        const newData = data.result.map((item) => {
+          return {
+            ...item,
+            trabalhado: ((Math.round(item.trabalhado) * 100) / 536).toFixed(2),
+          };
+        });
+        setFullData(newData);
       } catch (error) {
         console.log(error);
       }
@@ -37,15 +43,17 @@ function Cabins() {
         const response = await fetch(`${url}${date}`);
         const data = await response.json();
         //I need pass this newDate for setData(), but now, i use this for examples
-        // const newData = data.result.map((item) => {
-        //   return {
-        //     ...item,
-        //     trabalhado: Math.round(item.trabalhado),
-        //   };
-        // });
-        console.log(data);
+        const newData = data.result.map((item) => {
+          return {
+            ...item,
+            // trabalhado: Math.round(item.trabalhado),
+            trabalhado: ((Math.round(item.trabalhado) * 100) / 536).toFixed(2),
+            // trabalhado: item.trabalhado,
+          };
+        });
+        console.log(data.result);
         setDataForTable(data.unicDat);
-        setData(data.result);
+        setData(newData);
       } catch (error) {
         console.log(error);
       }
@@ -59,13 +67,21 @@ function Cabins() {
       <section className='  w-[85%] h-full py-2 px-5 flex flex-col absolute right-0 '>
         <h1 className=' mt-4 font-medium '>Relação de tempo por cabine</h1>
         <section className=' w-full flex items-center justify-center gap-5 '>
-          <div className=' w-1/2 flex flex-col items-center justify-center'>
-            <h2>Tempo total das cabines</h2>
+          <div className=' w-1/2 flex flex-col items-center justify-center border'>
+            <h2 className='text-slate-600 font-medium text-sm bg-slate-300 rounded mt-2 py-1 px-2 text-start'>
+              Capacidade produtiva diária das cabines (%)
+            </h2>
             <GraphBar data={fullData} />
           </div>
           <div>
             <div className=' w-full flex justify-around items-center '>
-              <h2>{date}</h2>
+              <h2 className='text-slate-600 font-medium text-sm bg-slate-300 rounded mt-2 py-1 px-2 text-start'>
+                Capacidade produtiva diária
+              </h2>
+
+              <h2 className='text-slate-600 font-medium text-sm rounded mt-2 py-1 px-2 text-start'>
+                {date}
+              </h2>
               <AnimationButton setActive={setActive} active={active} />
               {active ? (
                 <PickerMode selected={selected} setSelected={setSelected} />
