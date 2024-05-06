@@ -23,9 +23,11 @@ const SearchPage = () => {
         console.log(error);
       }
     }
+    if (value.option === 'batch' && value.search.length) fetchDatas();
     if (value.option === 'client' && value.search.length >= 3) fetchDatas();
     if (value.option.length > 3 && value.search.length >= 4) fetchDatas();
   }, [value]);
+
   return (
     <main className=' w-full h-screen flex flex-col'>
       <section className='  w-[85%] h-full py-2 px-5 flex flex-col absolute right-0 '>
