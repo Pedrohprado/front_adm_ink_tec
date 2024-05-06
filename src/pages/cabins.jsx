@@ -2,10 +2,12 @@ import React from 'react';
 import PickerMode from '../components/daypicker';
 import AnimationButton from '../components/animateButton';
 import GraphBar from '../components/graphics/graphbar';
+import TableLastOp from '../components/tables/tablelastop';
 
 function Cabins() {
   const [data, setData] = React.useState(null);
   const [fullData, setFullData] = React.useState(null);
+  const [dataForTable, setDataForTable] = React.useState(null);
   const [date, setDate] = React.useState(new Date().toISOString().slice(0, 10));
   const [active, setActive] = React.useState(false);
   const [selected, setSelected] = React.useState(new Date());
@@ -16,7 +18,7 @@ function Cabins() {
         const url = import.meta.env.VITE_BASE_URL_GET_SOME_CABINS_BY_DAY;
         const response = await fetch(`${url}null`);
         const data = await response.json();
-        setFullData(data);
+        setFullData(data.result);
       } catch (error) {
         console.log(error);
       }
@@ -35,15 +37,15 @@ function Cabins() {
         const response = await fetch(`${url}${date}`);
         const data = await response.json();
         //I need pass this newDate for setData(), but now, i use this for examples
-        const newData = data.map((item) => {
-          return {
-            ...item,
-            trabalhado: Math.round(item.trabalhado),
-          };
-        });
-
-        setData(data);
-        console.log(newData);
+        // const newData = data.result.map((item) => {
+        //   return {
+        //     ...item,
+        //     trabalhado: Math.round(item.trabalhado),
+        //   };
+        // });
+        console.log(data);
+        setDataForTable(data.unicDat);
+        setData(data.result);
       } catch (error) {
         console.log(error);
       }
@@ -73,6 +75,7 @@ function Cabins() {
             <GraphBar data={data} fill={'#001a5b'} />
           </div>
         </section>
+        <TableLastOp data={dataForTable} />
       </section>
     </main>
   );

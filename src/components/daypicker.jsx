@@ -30,7 +30,7 @@ function PickerMode({ selected, setSelected }) {
           border: '2px solid #007BFF',
         },
       }}
-      className=' bg-white rounded-lg shadow py-5 px-10 fixed top-32 right-32 z-10 flex items-center justify-center'
+      className=' bg-white rounded-lg shadow py-5 px-10 fixed top-24 right-32 z-10 flex items-center justify-center'
     />
   );
 }

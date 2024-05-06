@@ -4,11 +4,11 @@ import { AreaChart, Area, XAxis, Tooltip, LabelList } from 'recharts';
 function GraphInkByDays({ data, width, height }) {
   if (data)
     return (
-      <div className=' flex items-center justify-center mt-5 w-full'>
+      <div className='flex items-center justify-center mt-5 w-full'>
         <AreaChart width={width} height={height} data={data}>
           <XAxis dataKey={'cabine'} />
           <Tooltip />
-          <Area dataKey='trabalhado' fill='#dba80169' stroke='#dba801'>
+          <Area dataKey='trabalhado' fill='#B18CFF' stroke='#8b59f7'>
             <LabelList
               dataKey='trabalhado'
               position={'top'}

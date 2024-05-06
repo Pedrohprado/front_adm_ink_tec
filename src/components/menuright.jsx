@@ -1,16 +1,21 @@
 import { FaHouse, FaBrush, FaDiceD6, FaSistrix } from 'react-icons/fa6';
 import { IoMdPerson } from 'react-icons/io';
 import { Link } from 'react-router-dom';
+import Icon from './icon';
 
 function MenuRight() {
   return (
-    <header className=' w-[15%] h-screen bg-slate-950 text-white flex flex-col items-center justify-between p-2'>
+    <header className=' w-[17%] h-screen bg-slate-950 text-white flex flex-col items-center justify-between p-2'>
       <nav className=' w-full flex flex-col gap-1 mt-2'>
         <ul className=' flex flex-col gap-1 py-2 px-4 w-[80%]'>
-          <li className='flex items-center gap-2 p-1'>
-            <span>icon </span>INK Tec
+          <li className='flex items-center gap-2 p-1 font-medium'>
+            <span className=''>
+              <Icon />
+            </span>
+            INK Tec
           </li>
-          <li className='flex items-center gap-2 bg-slate-400 px-1 rounded-sm text-md'>
+
+          <li className='flex items-center gap-2 bg-slate-500 px-2 py-1 rounded-sm text-sm'>
             <span>
               <IoMdPerson />
             </span>
