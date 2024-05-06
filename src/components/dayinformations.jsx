@@ -28,7 +28,7 @@ const DayInformations = () => {
           tempo trabalhado por cabine
         </p>
       </span>
-      <GraphInkByDays data={data} />
+      <GraphInkByDays data={data} width={500} height={220} />
     </div>
   );
 };

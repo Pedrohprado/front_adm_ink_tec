@@ -1,12 +1,12 @@
 /* eslint-disable react/prop-types */
 import { AreaChart, Area, XAxis, Tooltip, LabelList } from 'recharts';
 
-function GraphInkByDays({ data }) {
+function GraphInkByDays({ data, width, height }) {
   if (data)
     return (
       <div className=' flex items-center justify-center mt-5 w-full'>
-        <AreaChart width={500} height={220} data={data}>
-          <XAxis dataKey='cabine' fontSize={'14px'} />
+        <AreaChart width={width} height={height} data={data}>
+          <XAxis dataKey={'cabine'} />
           <Tooltip />
           <Area dataKey='trabalhado' fill='#dba80169' stroke='#dba801'>
             <LabelList
