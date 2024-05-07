@@ -69,7 +69,7 @@ function Cabins() {
         <section className=' w-full flex items-center justify-center gap-5 '>
           <div className=' w-1/2 flex flex-col items-center justify-center border'>
             <h2 className='text-slate-600 font-medium text-sm bg-slate-300 rounded mt-2 py-1 px-2 text-start'>
-              Capacidade produtiva diária das cabines (%)
+              (%)
             </h2>
             <GraphBar data={fullData} />
           </div>
