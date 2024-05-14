@@ -5,7 +5,7 @@ import Icon from './icon';
 
 function MenuRight() {
   return (
-    <header className=' w-[17%] h-screen bg-slate-950 text-white flex flex-col items-center justify-between p-2'>
+    <header className=' w-[17%] h-screen bg-slate-950 text-white flex flex-col items-center justify-between p-2 fixed z-10'>
       <nav className=' w-full flex flex-col gap-1 mt-2'>
         <ul className=' flex flex-col gap-1 py-2 px-4 w-[80%]'>
           <li className='flex items-center gap-2 p-1 font-medium'>
