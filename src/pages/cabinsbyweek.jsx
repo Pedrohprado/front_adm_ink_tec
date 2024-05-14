@@ -5,6 +5,7 @@ import PickerDayByRange from '../components/pickerdaybyrange';
 import GraphPie from '../components/graphics/graphpie';
 import GraphBarInks from '../components/graphics/graphbarinks';
 import TableLastOp from '../components/tables/tablelastop';
+import GraphCabinInLine from '../components/graphics/graphcabinline';
 
 function CabinsByWeek() {
   const [fullData, setFullData] = React.useState(null);
@@ -14,6 +15,7 @@ function CabinsByWeek() {
   const [dataPie, setDataPie] = React.useState(null);
   const [dataInks, setDataInks] = React.useState(null);
   const [dataForTable, setDataForTable] = React.useState(null);
+  const [dataCabins, setDataCabins] = React.useState(null);
   const [quant, setQuant] = React.useState(0);
 
   React.useEffect(() => {
@@ -33,6 +35,7 @@ function CabinsByWeek() {
         setQuant(data.datasBetween.length);
         setDataPie(data.client);
         setDataInks(data.inks);
+        setDataCabins(data.teste);
         setDataForTable(data.datasBetween);
       } catch (error) {
         console.log(error);
@@ -79,7 +82,7 @@ function CabinsByWeek() {
         data={fullData}
         text={'Tempo trabalhado das cabines (pintando)- semanal'}
       />
-      <div className=' w-full flex items-center justify-center gap-2 py-5'>
+      <div className=' w-full flex items-center justify-center gap-2 py-5 mb-2'>
         <GraphBarInks
           data={dataInks}
           text={'quantidade das tintas utilizadas entre os dias'}
@@ -88,6 +91,8 @@ function CabinsByWeek() {
       </div>
 
       <TableLastOp data={dataForTable} />
+
+      <GraphCabinInLine data={dataCabins} />
     </section>
   );
 }

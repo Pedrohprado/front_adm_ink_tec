@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Link } from 'react-router-dom';
 import TableLastOp from './tables/tablelastop';
 import React from 'react';
@@ -26,7 +27,7 @@ const LastOperations = () => {
   }, []);
 
   return (
-    <div className=' h-[40%]  flex flex-col p-1 gap-2 mt-4'>
+    <div className='h-[50%] flex flex-col p-1 gap-2 mt-4'>
       <div className='flex justify-between'>
         <h2 className='font-bold'>Ultimas operações</h2>
         <Link

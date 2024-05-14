@@ -16,7 +16,7 @@ const TableLastOp = ({ data }) => {
 
   if (data)
     return (
-      <div className='overflow-x-auto relative shadow-md sm:rounded-lg'>
+      <div className='overflow-x-auto relative shadow-md sm:rounded-lg w-full max-h-64'>
         <table className='w-full text-sm text-left text-gray-500 bg-white'>
           <thead className='text-xs text-gray-700 bg-white border-b-[1px] '>
             <tr>

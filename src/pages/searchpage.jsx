@@ -29,9 +29,10 @@ const SearchPage = () => {
   }, [value]);
 
   return (
-    <main className=' w-full h-screen flex flex-col'>
-      <section className='  w-[85%] h-full py-2 px-5 flex flex-col absolute right-0 '>
+    <main className='w-full h-screen flex flex-col'>
+      <section className='w-[83%] h-full py-2 px-5 flex flex-col absolute right-0 '>
         <InputSearch setValue={setValue} value={value} />
+
         <TableForSearch data={data} setData={setData} />
       </section>
     </main>
