@@ -1,9 +1,13 @@
 import { FaHouse, FaBrush, FaDiceD6, FaSistrix } from 'react-icons/fa6';
-import { IoMdPerson } from 'react-icons/io';
+import { IoMdPerson, IoIosClose } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 import Icon from './icon';
+import React from 'react';
+import { GlobalContext } from '../global-context/globalcontext';
 
 function MenuRight() {
+  const { setLogin, setUserName, userName } = React.useContext(GlobalContext);
+
   return (
     <header className=' w-[17%] h-screen bg-slate-950 text-white flex flex-col items-center justify-between p-2 fixed z-10'>
       <nav className=' w-full flex flex-col gap-1 mt-2'>
@@ -15,11 +19,20 @@ function MenuRight() {
             INK Tec
           </li>
 
-          <li className='flex items-center gap-2 bg-slate-500 px-2 py-1 rounded-sm text-sm'>
+          <li className=' w-full flex items-center justify-between bg-slate-500 px-3 py-3 rounded-sm text-sm'>
             <span>
               <IoMdPerson />
             </span>
-            admin
+            {userName.slice(0, 5)}
+            <button
+              onClick={() => {
+                setLogin(false);
+                setUserName('');
+              }}
+              className=' transition bg-slate-50 text-slate-500 rounded hover:bg-slate-600 hover:text-white'
+            >
+              <IoIosClose size={20} />
+            </button>
           </li>
         </ul>
 
@@ -28,7 +41,7 @@ function MenuRight() {
         <ul className=' flex flex-col gap-4 py-2 px-4 text-sm'>
           <Link
             className='flex items-center gap-2 p-1 rounded-sm hover:bg-slate-400 transition hover:text-slate-600'
-            to={'/'}
+            to={'/home'}
           >
             <span>
               <FaHouse />
