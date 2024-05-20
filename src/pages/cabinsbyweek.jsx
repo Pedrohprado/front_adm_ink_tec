@@ -87,7 +87,7 @@ function CabinsByWeek() {
           data={dataInks}
           text={'quantidade das tintas utilizadas entre os dias'}
         />
-        <GraphPie data={dataPie} text={'clientes entre os dias (%)t'} />
+        <GraphPie data={dataPie} text={'clientes entre os dias (%)'} />
       </div>
 
       <TableLastOp data={dataForTable} />
