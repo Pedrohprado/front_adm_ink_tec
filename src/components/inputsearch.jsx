@@ -15,6 +15,7 @@ function InputSearch({ value, setValue }) {
             }))
           }
         >
+          <option value='cabin'>cabine de tinta</option>
           <option value='card'>cartão</option>
           <option value='client'>cliente</option>
           <option value='batch'>lote da tinta</option>

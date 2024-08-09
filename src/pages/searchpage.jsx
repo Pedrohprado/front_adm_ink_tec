@@ -23,6 +23,7 @@ const SearchPage = () => {
         console.log(error);
       }
     }
+    if (value.option === 'cabin' && value.search.length >= 3) fetchDatas();
     if (value.option === 'batch' && value.search.length) fetchDatas();
     if (value.option === 'client' && value.search.length >= 3) fetchDatas();
     if (value.option.length > 3 && value.search.length >= 4) fetchDatas();
